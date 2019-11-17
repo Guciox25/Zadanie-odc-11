@@ -12,14 +12,15 @@ int main()
 		cout<<endl;
 	}
 	srednia=suma/5;
-	cout<<"srednia wynosi: "<<srednia;
+	cout<<"srednia wynosi: "<<srednia<<endl;
 	
 	float roznica; //liczba najblizej sredniej to najmniejsza wrtosc wyrazenia "|liczbe-srednia|
 	roznica=srednia-tab[0];
 	if(roznica<0) roznica*=-1;
 	float x;
 	float odp;
-	int *tablica, z=0;
+	int z=0, y=0;
+	
 	odp=tab[0];
 	
 	for(int i=1;i<5;i++)
@@ -28,9 +29,19 @@ int main()
 		if(x<0) x*=-1;
 		if(roznica==x)
 		{
-		z++;
-		tablica= new int[z];
-		tablica[z-1]=tab[i];	
+			z++;
+			if(i==1)
+			{
+				y=1;
+			}
+			if(z==1)
+			{
+				cout<<"liczby najblizej sredniej to: "<<tab[i];
+			}
+			else
+			{
+				cout<<" "<<tab[i];
+			}
 		}
 		if(roznica>x)
 		{
@@ -38,20 +49,13 @@ int main()
 			odp=tab[i];
 		}
 	}
-	
 	if(z==0)
 	{
-
-	cout<<"liczba to: "<<odp;
+		cout<<"liczba najbizej sredniej to: "<<odp;
 	}
-	else
+	if(y==1)
 	{
-		cout<<"liczby to: ";
-		for(int i=0;i <z;i++)
-		{
-			cout<<*tablica[i]<<" ";
-		}	
-	}	
-	delete[] tablica;
+		cout<<" "<<odp;
+	}
 	return 0;
 }
