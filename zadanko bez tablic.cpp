@@ -14,7 +14,7 @@ int main()
 	srednia=suma/5;
 	cout<<"srednia wynosi: "<<srednia<<endl;
 	
-	float roznica; //liczba najblizej sredniej to najmniejsza wrtosc wyrazenia "|liczbe-srednia|
+	float roznica; //liczba najblizej sredniej to najmniejsza wrtosc wyrazenia "|srednia-liczba|
 	roznica=srednia-tab[0];
 	if(roznica<0) roznica*=-1;
 	float x;
